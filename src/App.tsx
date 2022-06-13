@@ -10,8 +10,13 @@ import dummyData from "./utils/dummyReposData";
 import useFetch from "./utils/useFetch";
 
 function App() {
+  
+  let date = new Date();
+  date.setTime(date.getTime() - 7 * 86400000);
+  const dateString = date.toISOString().split("T")[0];
+
   const [result, isLoading, error] = useFetch(
-    "https://api.github.com/search/repositories?q=created:%3E2017-01-10&sort=stars&order=desc"
+    `https://api.github.com/search/repositories?q=created:%3E${dateString}&sort=stars&order=desc`
   );
   console.log(result);
   console.log(error);
