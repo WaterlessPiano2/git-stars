@@ -13,8 +13,8 @@ function App() {
   console.log(result);
   console.log(error);
   console.log(isLoading);
-  
-  const repos: Repo[] = dummyData(1);
+
+  const repos: Repo[] = dummyData(10);
 
   return (
     <div className="App">

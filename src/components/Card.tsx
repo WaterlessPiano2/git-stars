@@ -3,9 +3,9 @@ import { Repo } from "../interfaces";
 
 export const Card = ({ id, name, stars, url }: Repo) => {
   return (
-    <span className="cardContainer">
+    <div className="cardContainer">
       <span> {name}</span> - <span>{url}</span> - <span>Stars: {stars}</span>
-    </span>
+    </div>
   );
 };
 
