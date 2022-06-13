@@ -10,7 +10,7 @@ export const List = ({ repos }: Props) => {
   return (
     <div className="cardContainer">
       {repos.map((repo) => (
-        <Card cardNumber={repo.id} />
+        <Card key={repo.id} cardNumber={repo.id} />
       ))}
     </div>
   );
