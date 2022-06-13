@@ -3,12 +3,9 @@ import { Repo } from "../interfaces";
 
 export const Card = ({ id, name, stars, url }: Repo) => {
   return (
-    <div className="cardContainer">
-      <span>
-        <a href={url}>{name}</a>
-      </span>{" "}
-      - <span>Stars: {stars}</span>
-    </div>
+    <a className="card" href={url}>
+      <h2 className="App-link">{name}</h2> <p>Stars: {stars}</p>
+    </a>
   );
 };
 

@@ -8,7 +8,7 @@ type Props = {
 
 export const List = ({ repos }: Props) => {
   return (
-    <div className="cardContainer">
+    <div className="listContainer">
       {repos.map((repo) => (
         <Card key={repo.id} id={repo.id} name={repo.name} stars={repo.stars} url={repo.url} />
       ))}

@@ -18,7 +18,6 @@ function App() {
     `https://api.github.com/search/repositories?q=created:%3E${dateString}&sort=stars&order=desc`
   );
 
-
   const repos: Repo[] =
     typeof result !== "boolean"
       ? result.map((res, index) => {
@@ -44,18 +43,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <p>Top repositories created in the last week.</p>
         {displayResults()}
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>Salih Cagdas Derya 2022</p>
       </header>
     </div>
   );
