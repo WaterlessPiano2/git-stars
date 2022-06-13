@@ -1,11 +1,27 @@
 import React from "react";
 import { Repo } from "../interfaces";
 
-export const Card = ({ id, name, stars, url }: Repo) => {
+export const Card = ({
+  githubId,
+  name,
+  stars,
+  url,
+  description,
+  language,
+}: Repo) => {
   return (
-    <a className="card" href={url}>
-      <h2 className="App-link">{name}</h2> <p>Stars: {stars}</p>
-    </a>
+    <div className="card">
+      <p className="link10">
+        <a href="href={url}"> {name}</a>
+      </p>
+      <p>{description}</p>{" "}
+      {language && (
+        <p className="code">
+          Language: <span>{language}</span>
+        </p>
+      )}
+      <p className="stars">Stars: {stars}</p>
+    </div>
   );
 };
 

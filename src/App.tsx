@@ -2,11 +2,9 @@
 /* eslint-disable no-labels */
 /* eslint-disable no-label-var */
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import List from "./components/List";
 import { Repo } from "./interfaces";
-import dummyData from "./utils/dummyReposData";
 import useFetch from "./utils/useFetch";
 
 function App() {
@@ -25,7 +23,10 @@ function App() {
             name: res["full_name"],
             stars: res["stargazers_count"],
             url: res["html_url"],
-            id: index,
+            index,
+            githubId: res["id"],
+            description: res["description"],
+            language: res["language"],
           };
         })
       : [];

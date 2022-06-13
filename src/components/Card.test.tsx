@@ -7,7 +7,15 @@ const repo = dummyData(1)[0];
 
 test("renders Card with correct prop", () => {
   render(
-    <Card id={repo.id} name={repo.name} stars={repo.stars} url={repo.url} />
+    <Card
+      githubId={repo.githubId}
+      name={repo.name}
+      stars={repo.stars}
+      url={repo.url}
+      language={repo.language}
+      description={repo.description}
+      index={repo.index}
+    />
   );
   const cardElement = screen.getByText(`Repo 1`);
   expect(cardElement).toBeInTheDocument();

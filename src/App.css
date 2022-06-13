@@ -24,7 +24,23 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
+  max-width: 90%;
+}
+
+.code {
+  color: lightskyblue;
+  padding-top: 0.75rem;
+  font-size: 1.1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+.stars {
+  color: gold;
+  padding-top: 0.75rem;
+  font-size: 1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
 .card {
@@ -40,11 +56,46 @@
   word-wrap: break-word;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #39f300;
-  border-color: #39f300;
+/* Link Style 10 */
+.link10 a {
+  position: relative;
+  text-decoration: none;
+  color: lightskyblue;
+  transition: color 0.15s ease-in-out;
+}
+
+.link10 a:hover {
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+.link10 a:after {
+  display: block;
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  opacity: 0;
+  transform: translateY(-150%);
+  transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out;
+  background-color: gold;
+}
+
+.link10 a.is-active,
+.link10 a:active,
+.link10 a:focus,
+.link10 a:hover {
+  color: gold;
+}
+
+.link10 a.is-active:after,
+.link10 a:active:after,
+.link10 a:focus:after,
+.link10 a:hover:after {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .card h2 {

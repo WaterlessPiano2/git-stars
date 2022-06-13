@@ -10,7 +10,16 @@ export const List = ({ repos }: Props) => {
   return (
     <div className="listContainer">
       {repos.map((repo) => (
-        <Card key={repo.id} id={repo.id} name={repo.name} stars={repo.stars} url={repo.url} />
+        <Card
+          key={repo.index}
+          index={repo.index}
+          githubId={repo.githubId}
+          name={repo.name}
+          stars={repo.stars}
+          url={repo.url}
+          description={repo.description}
+          language={repo.language}
+        />
       ))}
     </div>
   );
