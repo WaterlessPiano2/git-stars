@@ -4,7 +4,10 @@ import { Repo } from "../interfaces";
 export const Card = ({ id, name, stars, url }: Repo) => {
   return (
     <div className="cardContainer">
-      <span> {name}</span> - <span>{url}</span> - <span>Stars: {stars}</span>
+      <span>
+        <a href={url}>{name}</a>
+      </span>{" "}
+      - <span>Stars: {stars}</span>
     </div>
   );
 };

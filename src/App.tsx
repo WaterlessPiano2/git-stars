@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
+/* eslint-disable no-labels */
+/* eslint-disable no-label-var */
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
@@ -14,7 +17,19 @@ function App() {
   console.log(error);
   console.log(isLoading);
 
-  const repos: Repo[] = dummyData(10);
+  const repos: Repo[] =
+    typeof result !== "boolean"
+      ? result.map((res, index) => {
+          return {
+            name: res["full_name"],
+            stars: res["stargazers_count"],
+            url: res["html_url"],
+            id: index,
+          };
+        })
+      : [];
+
+  // const repos: Repo[] = dummyData(10);
 
   return (
     <div className="App">
