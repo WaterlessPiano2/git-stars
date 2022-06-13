@@ -1,14 +1,11 @@
 import React from "react";
+import { Repo } from "../interfaces";
 
-type Props = {
-  cardNumber: number;
-};
-
-export const Card = ({ cardNumber }: Props) => {
+export const Card = ({ id, name, stars, url }: Repo) => {
   return (
-    <div className="cardContainer">
-      <h1>This is the Card {cardNumber}</h1>
-    </div>
+    <span className="cardContainer">
+      <span> {name}</span> - <span>{url}</span> - <span>Stars: {stars}</span>
+    </span>
   );
 };
 

@@ -7,10 +7,13 @@ import dummyData from "./utils/dummyReposData";
 import useFetch from "./utils/useFetch";
 
 function App() {
-  useFetch(
+  const [result, isLoading, error] = useFetch(
     "https://api.github.com/search/repositories?q=created:%3E2017-01-10&sort=stars&order=desc"
   );
-
+  console.log(result);
+  console.log(error);
+  console.log(isLoading);
+  
   const repos: Repo[] = dummyData(1);
 
   return (
