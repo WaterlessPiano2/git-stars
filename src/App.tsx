@@ -10,7 +10,6 @@ import dummyData from "./utils/dummyReposData";
 import useFetch from "./utils/useFetch";
 
 function App() {
-  
   let date = new Date();
   date.setTime(date.getTime() - 7 * 86400000);
   const dateString = date.toISOString().split("T")[0];
@@ -18,9 +17,7 @@ function App() {
   const [result, isLoading, error] = useFetch(
     `https://api.github.com/search/repositories?q=created:%3E${dateString}&sort=stars&order=desc`
   );
-  console.log(result);
-  console.log(error);
-  console.log(isLoading);
+
 
   const repos: Repo[] =
     typeof result !== "boolean"
@@ -34,16 +31,23 @@ function App() {
         })
       : [];
 
-  // const repos: Repo[] = dummyData(10);
+  const displayResults = () => {
+    if (isLoading) {
+      return <div>Loading...</div>;
+    } else if (error) {
+      return <div>Error</div>;
+    } else {
+      return <List repos={repos} />;
+    }
+  };
 
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <List repos={repos} />
+        {displayResults()}
         <a
           className="App-link"
           href="https://reactjs.org"
