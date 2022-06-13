@@ -1,9 +1,13 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Card from "./components/Card";
+import List from "./components/List";
+import { Repo } from "./interfaces";
+import dummyData from "./utils/dummyReposData";
 
 function App() {
+  const repos: Repo[] = dummyData(300);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -11,7 +15,7 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <Card cardNumber={1} />
+        <List repos={repos} />
         <a
           className="App-link"
           href="https://reactjs.org"
