@@ -1,5 +1,7 @@
 # Git Stars
 
+[Demo at of the git stars app](https://git-stars-liart.vercel.app/).
+
 A web page that show this weeks trending GitHub Repositories.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

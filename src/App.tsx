@@ -20,6 +20,12 @@ function App() {
     `https://api.github.com/search/repositories?q=created:%3E${dateString}&sort=stars&order=desc`
   );
 
+  useEffect(() => {
+    if (result) {
+      setReposToShow(repos);
+    }
+  }, [result]);
+
   const repos: Repo[] =
     typeof result !== "boolean"
       ? result
@@ -48,13 +54,13 @@ function App() {
 
   const filterOut = (filter: string) => {
     const favourites = getLocalData("gitStars");
-    if (filter === "none") {
+    if (filter === "Showing all repos.") {
       setCurrentFilter("Showing all repos.");
       setReposToShow(repos);
-    } else if (filter === "favourites") {
+    } else if (filter === "Showing your favourites.") {
       setCurrentFilter("Showing your favourites.");
       setReposToShow(favourites);
-    } else if (filter === "notFavourites") {
+    } else if (filter === "Showing your not favourites.") {
       setCurrentFilter("Showing your not favourites.");
       setReposToShow(
         repos.filter(
@@ -72,13 +78,22 @@ function App() {
       <header className="App-header">
         <p>Top repositories created in the last week.</p>
         <p>
-          <button onClick={() => filterOut("none")} className="filter">
+          <button
+            onClick={() => filterOut("Showing all repos.")}
+            className="filter"
+          >
             Show All
           </button>
-          <button onClick={() => filterOut("favourites")} className="filter">
+          <button
+            onClick={() => filterOut("Showing your favourites.")}
+            className="filter"
+          >
             My Favouries
           </button>
-          <button onClick={() => filterOut("notFavourites")} className="filter">
+          <button
+            onClick={() => filterOut("Showing your not favourites.")}
+            className="filter"
+          >
             Not My Favourite
           </button>
         </p>
