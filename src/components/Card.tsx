@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Repo } from "../interfaces";
+import { setLocalData, getLocalData } from "../utils/localStore";
 
 export const Card = ({
   githubId,
@@ -10,10 +11,24 @@ export const Card = ({
   language,
   index,
 }: Repo) => {
-  const [isFavourited, setIsFavourited] = useState(false);
+  const isCrrentRepoFavorite =
+    getLocalData("gitStars").findIndex(
+      (star) => star["githubId"] === githubId
+    ) !== -1;
+  const [isFavourited, setIsFavourited] = useState(isCrrentRepoFavorite);
+
   const onClick = () => {
     console.log(name);
     setIsFavourited(!isFavourited);
+    setLocalData("gitStars", {
+      githubId,
+      name,
+      stars,
+      url,
+      description,
+      language,
+      index,
+    });
   };
 
   return (
