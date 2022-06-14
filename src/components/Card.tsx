@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Repo } from "../interfaces";
 
 export const Card = ({
@@ -10,6 +10,12 @@ export const Card = ({
   language,
   index,
 }: Repo) => {
+  const [isFavourited, setIsFavourited] = useState(false);
+  const onClick = () => {
+    console.log(name);
+    setIsFavourited(!isFavourited);
+  };
+
   return (
     <div className="card">
       <p className="link10">
@@ -23,7 +29,10 @@ export const Card = ({
           Language: <span>{language}</span>
         </p>
       )}
-      <p className="stars">Stars: {stars}</p>{" "}
+      <p className="stars">
+        Stars: {stars}{" "}
+        <button onClick={() => onClick()}>{isFavourited ? "⭐" : "✰"}</button>
+      </p>
     </div>
   );
 };

@@ -27,6 +27,17 @@
   max-width: 90%;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
 .code {
   color: lightskyblue;
   padding-top: 0.75rem;
