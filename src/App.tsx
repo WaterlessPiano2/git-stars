@@ -29,8 +29,10 @@ function App() {
   const repos: Repo[] =
     typeof result !== "boolean"
       ? result
-          .map((res) => {
+          .sort((a, b) => b["stargazers_count"] - a["stargazers_count"])
+          .map((res, index) => {
             return {
+              index: index + 1,
               name: res["full_name"],
               stars: res["stargazers_count"],
               url: res["html_url"],
@@ -39,7 +41,6 @@ function App() {
               language: res["language"],
             };
           })
-          .sort((a, b) => b.stars - a.stars)
       : [];
 
   const displayResults = () => {

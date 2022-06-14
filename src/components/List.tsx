@@ -9,10 +9,10 @@ type Props = {
 export const List = ({ repos }: Props) => {
   return (
     <div className="listContainer">
-      {repos.map((repo, index) => (
+      {repos.map((repo) => (
         <Card
-          key={index}
-          index={index + 1}
+          key={repo.index}
+          index={repo.index}
           githubId={repo.githubId}
           name={repo.name}
           stars={repo.stars}
