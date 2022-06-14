@@ -27,7 +27,7 @@
   max-width: 90%;
 }
 
-button {
+.star {
   background-color: transparent;
   border: none;
   margin: 0;
@@ -36,6 +36,13 @@ button {
   font-size: 1.5rem;
   cursor: pointer;
   color: white;
+}
+.filter {
+  font-weight: 800;
+  padding: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: rgb(67, 118, 222);
 }
 
 .code {

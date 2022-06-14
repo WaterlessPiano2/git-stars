@@ -18,7 +18,6 @@ export const Card = ({
   const [isFavourited, setIsFavourited] = useState(isCrrentRepoFavorite);
 
   const onClick = () => {
-    console.log(name);
     setIsFavourited(!isFavourited);
     setLocalData("gitStars", {
       githubId,
@@ -46,7 +45,9 @@ export const Card = ({
       )}
       <p className="stars">
         Stars: {stars}{" "}
-        <button onClick={() => onClick()}>{isFavourited ? "⭐" : "✰"}</button>
+        <button className="star" onClick={() => onClick()}>
+          {isFavourited ? "⭐" : "✰"}
+        </button>
       </p>
     </div>
   );
