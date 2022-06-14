@@ -52,12 +52,15 @@
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+  max-width: 400px;
   word-wrap: break-word;
 }
 
 /* Link Style 10 */
 .link10 a {
+  font-size: 1.75rem;
+  line-height: 1.5;
+  padding-bottom: 5px;
   position: relative;
   text-decoration: none;
   color: lightskyblue;
@@ -109,7 +112,7 @@
   line-height: 1.5;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .grid {
     width: 100%;
     flex-direction: column;

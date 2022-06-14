@@ -2,7 +2,7 @@ export type Repo = {
   name: string;
   stars: number;
   url: string;
-  index: number;
+  index?: number;
   githubId: number;
   description: string;
   language: string;

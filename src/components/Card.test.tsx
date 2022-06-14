@@ -17,6 +17,6 @@ test("renders Card with correct prop", () => {
       index={repo.index}
     />
   );
-  const cardElement = screen.getByText(`Repo 1`);
+  const cardElement = screen.getByText(`1- Repo 1`);
   expect(cardElement).toBeInTheDocument();
 });

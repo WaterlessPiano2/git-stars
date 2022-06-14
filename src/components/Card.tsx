@@ -8,11 +8,14 @@ export const Card = ({
   url,
   description,
   language,
+  index,
 }: Repo) => {
   return (
     <div className="card">
       <p className="link10">
-        <a href="href={url}"> {name}</a>
+        <a href={url}>
+          {index}- {name}
+        </a>
       </p>
       <p>{description}</p>{" "}
       {language && (
@@ -20,7 +23,7 @@ export const Card = ({
           Language: <span>{language}</span>
         </p>
       )}
-      <p className="stars">Stars: {stars}</p>
+      <p className="stars">Stars: {stars}</p>{" "}
     </div>
   );
 };

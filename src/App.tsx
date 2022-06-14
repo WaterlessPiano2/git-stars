@@ -18,17 +18,18 @@ function App() {
 
   const repos: Repo[] =
     typeof result !== "boolean"
-      ? result.map((res, index) => {
-          return {
-            name: res["full_name"],
-            stars: res["stargazers_count"],
-            url: res["html_url"],
-            index,
-            githubId: res["id"],
-            description: res["description"],
-            language: res["language"],
-          };
-        })
+      ? result
+          .map((res) => {
+            return {
+              name: res["full_name"],
+              stars: res["stargazers_count"],
+              url: res["html_url"],
+              githubId: res["id"],
+              description: res["description"],
+              language: res["language"],
+            };
+          })
+          .sort((a, b) => b.stars - a.stars)
       : [];
 
   const displayResults = () => {
