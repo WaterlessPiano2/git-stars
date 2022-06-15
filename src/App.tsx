@@ -100,6 +100,9 @@ function App() {
         </p>
         <div>{currentFilter}</div>
         {displayResults()}
+        <p className="link10">
+          <a href="https://twitter.com/mo_solah">Mo_Solah on Twitter</a>
+        </p>
         <p>Salih Cagdas Derya 2022</p>
       </header>
     </div>
