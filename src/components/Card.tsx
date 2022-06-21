@@ -10,6 +10,7 @@ export const Card = ({
   description,
   language,
   index,
+  created_at,
 }: Repo) => {
   const isCrrentRepoFavorite =
     getLocalData("gitStars").findIndex(
@@ -27,6 +28,7 @@ export const Card = ({
       description,
       language,
       index,
+      created_at,
     });
   };
 
@@ -43,6 +45,7 @@ export const Card = ({
           Language: <span>{language}</span>
         </p>
       )}
+      <p>Created at: {created_at.slice(0, 10)}</p>{" "}
       <p className="stars">
         Stars: {stars}{" "}
         <button className="star" onClick={() => onClick()}>

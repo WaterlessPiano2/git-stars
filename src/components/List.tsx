@@ -19,6 +19,7 @@ export const List = ({ repos }: Props) => {
           url={repo.url}
           description={repo.description}
           language={repo.language}
+          created_at={repo.created_at}
         />
       ))}
     </div>

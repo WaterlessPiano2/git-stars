@@ -10,7 +10,8 @@ const dummyData = (numberOfRepos: number): Repo[] => {
       url: `www.repo${i}.com`,
       index: i,
       description: `Description of repo ${i}`,
-      language: `Language of repo ${i}`
+      language: `Language of repo ${i}`,
+      created_at: "2022-06-18T00:03:51Z",
     });
   }
   return repos;

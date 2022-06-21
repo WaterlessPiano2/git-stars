@@ -39,6 +39,7 @@ function App() {
               githubId: res["id"],
               description: res["description"],
               language: res["language"],
+              created_at: res["created_at"],
             };
           })
       : [];

@@ -15,6 +15,7 @@ test("renders Card with correct prop", () => {
       language={repo.language}
       description={repo.description}
       index={repo.index}
+      created_at={repo.created_at}
     />
   );
   const cardElement = screen.getByText(`1- Repo 1`);
